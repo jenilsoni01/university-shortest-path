@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e9f3fb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    animation: fadeIn 0.7s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#map-container {
+    width: 90%;
+    max-width: 1000px;
+    height: 68vh;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#mapi {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#locate {
+    width: 90%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slideUp 0.7s ease-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+#input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+#input-container input {
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1em;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+#input-container input:focus {
+    border-color: #0077ff;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+    transition: transform 0.3s ease;
+    outline: none;
+    border: none;
+}
+
+#find-path {
+    background-color: #0077ff;
+    color: #ffffff;
+    margin-top: 15px;
+}
+
+#find-path:hover {
+    background-color: #ffffff;
+    color: #0077ff;
+    border: 1px solid #0077ff;
+    transform: scale(1.02);
+}
+
+#reset-button {
+    background-color: #ff4444;
+    color: #ffffff;
+    margin-top: 10px;
+}
+
+#reset-button:hover {
+    background-color: #ffffff;
+    color: #ff4444;
+    border: 1px solid #ff4444;
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    #map-container {
+        width: 95%;
+        height: 50vh;
+    }
+
+    #locate {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    #map-container {
+        height: 45vh;
+    }
+
+    #locate {
+        padding: 10px;
+    }
+}
